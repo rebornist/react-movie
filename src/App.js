@@ -1,19 +1,7 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 // import Potato from './Potato';
 
-
-function Food({ id, name, picture }) {
-  return (
-    <div>
-      <h1>{ id }. I like { name }</h1>;
-      <img src={ picture } alt={ name } />
-    </div>
-  ) 
-}
-
-// function Food(props) {
-//   return <h1>I like { props.name }</h1>;
-// }
 
 const foodILike = [
   {
@@ -53,9 +41,29 @@ const foodILike = [
   },
 ];
 
+
+function Food({ name, picture, rating }) {
+  return (
+    <div>
+      <h1>I like { name }</h1>;
+      <h2>rating: { rating } / 5</h2>
+      <img src={ picture } alt={ name } />
+    </div>
+  ) 
+}
+
+Food.propTypes = {
+  name: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+}
+// function Food(props) {
+//   return <h1>I like { props.name }</h1>;
+// }
+
 function renderFood(dish){
   console.log(dish)
-  return <Food id={dish.id} name={dish.name} picture={dish.image} />
+  return <Food key={dish.id} name={dish.name} picture={dish.image} rating={dish.rating} />
 }
 
 function App() {

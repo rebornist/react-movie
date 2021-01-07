@@ -18,3 +18,7 @@
     git branch -M main
     git remote add origin https://github.com/rebornist/react-movie.git
     git push -u origin main
+
+3. react 에 전달된 props 타입의 오류 체크 패키지 설치
+    npm i prop-types
+    import PropTypes from "prop-types";
