@@ -11,3 +11,10 @@
     npx create-react-app react-movie
     cd react-movie
     npm start
+
+2. git 초기화
+    git add README.md
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/rebornist/react-movie.git
+    git push -u origin main
