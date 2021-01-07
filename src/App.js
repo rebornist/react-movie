@@ -2,11 +2,13 @@ import React from 'react';
 // import Potato from './Potato';
 
 
-function Food({ name, picture }) {
-  return <div>
-    <h1>I like { name }</h1>;
-    <img src={ picture } />
-  </div> 
+function Food({ id, name, picture }) {
+  return (
+    <div>
+      <h1>{ id }. I like { name }</h1>;
+      <img src={ picture } alt={ name } />
+    </div>
+  ) 
 }
 
 // function Food(props) {
@@ -51,11 +53,17 @@ const foodILike = [
   },
 ];
 
+function renderFood(dish){
+  console.log(dish)
+  return <Food id={dish.id} name={dish.name} picture={dish.image} />
+}
+
 function App() {
   return (
     <div>
       <h1>Hello!!!!!</h1>
-      { foodILike.map(dish => <Food name={dish.name} picture={dish.image} />) }
+      {/* { console.log(foodILike.map(renderFood)) } */}
+      { foodILike.map(renderFood) }
     </div>
   );
 }
