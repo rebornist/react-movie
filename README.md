@@ -22,3 +22,7 @@
 3. react 에 전달된 props 타입의 오류 체크 패키지 설치
     npm i prop-types
     import PropTypes from "prop-types";
+
+4. fetch를 대체한 axios 설치
+    npm i axios
+    import axios from "axios";
